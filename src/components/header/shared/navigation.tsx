@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import data from './navigation-data';
 import Link from 'next/link';
-import NavigationMobile from './navigation-mobile';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
 import { route } from 'next/dist/next-server/server/router';

@@ -15,7 +15,7 @@ const ranking = () => {
     <Layout title="Ranking">
       <div className="container">
         <Breadcrumb>
-          <BreadcrumbItem href="/" startIcon={<i className="fas fa-home"></i>}>
+          <BreadcrumbItem startIcon={<i className="fas fa-home"></i>}>
             커뮤니티
           </BreadcrumbItem>
           <BreadcrumbItem>랭킹조회</BreadcrumbItem>

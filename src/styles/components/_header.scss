@@ -1,14 +1,18 @@
+
+
 header {
-  box-shadow: 0px 5px 5px 0 rgba(48, 68, 78, 0.1);
-  font-size: 14px;
-  position: fixed;
+  box-shadow: 0px 10px 10px 0 rgba(48, 68, 78, 0.1);
+  font-size: 16px;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
+  border: 2cm;
+  transition: all 0.5s ease;
   background-color: #fff;
   .header-wrapper {
-    padding: 25px 0;
+    padding: 20px 0;
     @include prefix(transition, $transition);
     @include flexAlign(center, space-between);
     .header-logo {
@@ -45,7 +49,7 @@ header {
               setColor(primary),
               $fsz: 1em,
               $lh: 1em,
-              $fw: 600,
+              $fw: 500,
               $up: true,
               $dashcolor: setColor(primary),
               $bottom-dash: true
@@ -53,7 +57,7 @@ header {
           }
           &:hover {
             .dropdown-menu {
-              opacity: 1;
+              opacity: 0.8;
               visibility: visible;
             }
             & > a {
@@ -68,8 +72,8 @@ header {
             left: 0;
             padding: 30px 50px;
             background-color: #fff;
-            box-shadow: 0px 5px 5px 0 rgba(48, 68, 78, 0.1);
-            opacity: 0;
+            box-shadow: 0px 3px 3px 0 rgba(48, 68, 78, 0.1);
+            border: 2mm;
             visibility: hidden;
             z-index: 10;
             li {

@@ -21,7 +21,7 @@ const boardList = () => {
     <Layout title="커뮤니티">
       <div className="container">
         <Breadcrumb>
-          <BreadcrumbItem href="/" startIcon={<i className="fas fa-home"></i>}>
+          <BreadcrumbItem startIcon={<i className="fas fa-home"></i>}>
             커뮤니티
           </BreadcrumbItem>
           <BreadcrumbItem>게시글목록</BreadcrumbItem>

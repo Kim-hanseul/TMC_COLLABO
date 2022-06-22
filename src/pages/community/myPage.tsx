@@ -21,7 +21,7 @@ const myPage = () => {
     <Layout title="MyPage">
       <div className="container">
         <Breadcrumb>
-          <BreadcrumbItem href="/" startIcon={<i className="fas fa-home"></i>}>
+          <BreadcrumbItem startIcon={<i className="fas fa-home"></i>}>
             커뮤니티
           </BreadcrumbItem>
           <BreadcrumbItem>나의 게시글</BreadcrumbItem>

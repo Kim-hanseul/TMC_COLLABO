@@ -17,7 +17,7 @@ const write = () => {
     <Layout title="Ranking">
       <div className="container">
         <Breadcrumb>
-          <BreadcrumbItem href="/" startIcon={<i className="fas fa-home"></i>}>
+          <BreadcrumbItem startIcon={<i className="fas fa-home"></i>}>
             커뮤니티
           </BreadcrumbItem>
           <BreadcrumbItem>게시글 올리기</BreadcrumbItem>
@@ -26,5 +26,9 @@ const write = () => {
     </Layout>
   );
 };
+
+const writeStyle = styled.div`
+  font-family: 'sda';
+`
 
 export default write;

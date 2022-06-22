@@ -1,7 +1,16 @@
+@font-face {
+  font-family: 'Font-test';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../Fonts/Dot.ttf') format('truetype');
+       
+}
+
 .center-line-title {
   font-size: 16px;
   display: flex;
-  align-items: center;
+  align-items: right;
   margin-bottom: emCal(16, 40);
   h5 {
     @include typo($fsz: emCal(16, 18), $up: true, $fw: 600);

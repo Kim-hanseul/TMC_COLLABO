@@ -23,7 +23,7 @@
       "@common/*": ["common/*"],
       "@services/*": ["services/*"],
       "@store/*": ["store/*"],
-      "@container/*": ["container/*"]
+      "@container/*": ["container/*"],
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

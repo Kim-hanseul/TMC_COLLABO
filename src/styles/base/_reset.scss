@@ -5,6 +5,15 @@
   box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'Font-test';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('../Fonts/Dot.woff2') format('wott2');
+       
+}
+
 html,
 body,
 div,
@@ -89,10 +98,10 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 100%;
-  font-family: 'DM Sans', sans-serif;
+  font-size: 18px;
+  font-family: 'Font-test', sans-serif;
   vertical-align: baseline;
-  font-weight: 500;
+  font-weight: 100;
 }
 
 :focus {
