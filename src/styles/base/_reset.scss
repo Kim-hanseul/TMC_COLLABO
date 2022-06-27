@@ -6,13 +6,14 @@
 }
 
 @font-face {
-  font-family: 'Font-test';
+  font-family: 'JUA';
   font-style: normal;
   font-weight: 400;
   font-display: swap;
-  src: url('../Fonts/Dot.woff2') format('wott2');
+  src: url('../Fonts/JUA.ttf') format('truetype');
        
 }
+
 
 html,
 body,
@@ -98,10 +99,10 @@ video {
   margin: 0;
   padding: 0;
   border: 0;
-  font-size: 18px;
-  font-family: 'Font-test', sans-serif;
+  font-size: 25px;
+  font-family: 'JUA', cursive;
   vertical-align: baseline;
-  font-weight: 100;
+  font-weight: 50;
 }
 
 :focus {
