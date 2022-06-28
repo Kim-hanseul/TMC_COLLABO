@@ -39,7 +39,8 @@ export const userJoinApi = async (
         birth: string,
         nickname: string,
         email: string,
-        phone: string}) => {
+        phone: string,
+        time : string}) => {
         try{
             alert(`진행4. API 시도`)   
             const response : AxiosResponse<any, UserType[]> =

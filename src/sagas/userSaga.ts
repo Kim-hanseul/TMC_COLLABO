@@ -13,7 +13,7 @@ interface UserJoinType{
     type: string;
     payload: {
         username:string, password:string, email:string, 
-        name:string, phone:string, birth:string, nickname:string
+        name:string, phone:string, birth:string, nickname:string, time:string
     }
 }
 /** 

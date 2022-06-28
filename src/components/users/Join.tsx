@@ -8,7 +8,7 @@ const Join: React.FC = () => {
     username:'', password:'', email:'', name:'', phone:'', birth:'', nickname:''
 })
 
-const dispatch = useAppDispatch();
+const dispatch = useDispatch();
 
 const handleChange = (e: { preventDefault: () => void; target: { name: string; value: string } }) =>{
     e.preventDefault()
@@ -62,7 +62,7 @@ const handleChange = (e: { preventDefault: () => void; target: { name: string; v
         <input onChange = {handleChange} type="text" className="form-control" id="phone" name='phone' placeholder="Phone Number" />
         <label htmlFor="floatingPhone"><h5>Phone Number</h5></label>
       </div>
-      <button className="w-100 btn btn-lg btn-outline-secondary" >
+      <button  className="w-100 btn btn-lg btn-outline-secondary" >
         <h4>Sign Up</h4>
         </button>
         <div className="custom-control custom-checkbox">
