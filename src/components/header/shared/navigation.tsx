@@ -3,7 +3,7 @@ import data from './navigation-data';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import classNames from 'classnames';
-import { route } from 'next/dist/next-server/server/router';
+
 interface NavigationProps {
   isOpenNavMobile: boolean;
   setIsOpenNavMobile: (p: boolean) => void;

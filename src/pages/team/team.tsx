@@ -5,9 +5,6 @@ import styles from 'styles/team.module.css'
 import styled from 'styled-components'
 
 const About = () => {
-  const handleSubmit = (val: { email: string }) => {
-    console.log(val);
-  };
  
   return (
     <Layout title="About Team">

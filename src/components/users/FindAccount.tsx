@@ -24,10 +24,7 @@ const FindAccount: React.FC<Props> = ({handleFindId, handleFindPw, submitFindId,
         <label htmlFor="floatingInput"><h5>가입하신 이름</h5></label>
       </div>
 
-      <div className="form-floating">
-        <input onChange = {handleFindId} name = "email" type="email" className="form-control" id="inputEmail" placeholder='E-mail'/>
-        <label htmlFor="floatingInput"><h5>가입한 E-mail</h5></label>
-      </div>
+
 
       
 
@@ -47,10 +44,7 @@ const FindAccount: React.FC<Props> = ({handleFindId, handleFindPw, submitFindId,
         <label htmlFor="floatingInput"><h5>내 아이디</h5></label>
       </div>
 
-      <div className="form-floating">
-        <input onChange = {handleFindPw} name = "email" type="email" className="form-control" id="inputEmail" placeholder='E-mail'/>
-        <label htmlFor="floatingInput"><h5>가입한 E-mail</h5></label>
-      </div>
+
 
       <button  className="w-100 btn btn-lg btn-outline-secondary" type="submit">
         <h4>다음</h4>

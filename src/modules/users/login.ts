@@ -7,7 +7,7 @@ export interface UserLoginInput {
 }
 
 export interface LoginUser{ // api data type
-    username:string, password:string, email:string, name:string,
+    username:string, password:string, name:string,
      phone:string, birth:string, nickname:string, userId? : number,
      token: any, roles: any   
 }
@@ -74,7 +74,6 @@ interface AuthPayload {
 interface AuthInfo {
     username: string;
     name: string;
-    email: string;
     phone: string;
 }
 interface AuthState {
@@ -90,7 +89,6 @@ const loginInitialState: AuthState = {
     {
         username: '',
         name: '',
-        email: '',
         phone: ''
     },
     actionResult: '',

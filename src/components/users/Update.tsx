@@ -63,13 +63,10 @@ const Update: React.FC = (props: Props) => {
           </div>
   
           <div className="mb-3">
-            <label htmlFor="email"><h5>이메일 수정</h5></label>
+
               <div className="accordion" id="accordionExample3">
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingThree">
-                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
-        내 이메일 : iqeq1219@naver.com
-                    </button>
                   </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                       <div className="accordion-body">
@@ -137,7 +134,6 @@ const Update: React.FC = (props: Props) => {
             </div>
           </div>
           <div className="mb-3">
-            <label htmlFor="email"><h5>전화번호 수정</h5></label>
               <div className="accordion" id="accordionExample3">
                 <div className="accordion-item">
                   <h2 className="accordion-header" id="headingThree">

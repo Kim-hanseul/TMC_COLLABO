@@ -12,7 +12,7 @@ import { findUserPwActions, findUserPwRequest, ResultFindPw } from 'modules/user
 interface UserJoinType{
     type: string;
     payload: {
-        username:string, password:string, email:string, 
+        username:string, password:string, 
         name:string, phone:string, birth:string, nickname:string, time:string
     }
 }
@@ -31,7 +31,7 @@ interface UserLoginSuccessType {
 }
 */
 export interface LoginUser{ // api data type
-    username:string, password:string, email:string, name:string,
+    username:string, password:string, name:string,
      phone:string, birth:string, nickname:string, userId? : number,
      token: any, roles: any   
 }

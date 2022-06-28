@@ -2,7 +2,7 @@ import { PayloadAction } from "@reduxjs/toolkit"
 
 export interface fetchUser { // adt
     username: string, password: string,
-    email: string, name : string, nickname: string,
+    name : string, nickname: string,
     phone : string
 }
 

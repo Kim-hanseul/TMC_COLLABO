@@ -5,7 +5,7 @@ import {  User, userActions } from 'modules/users/join'
 const Join: React.FC = () => {
     
   const [user, setUser] =useState<User>({
-    username:'', password:'', email:'', name:'', phone:'', birth:'', nickname:''
+    username:'', password:'', name:'', phone:'', birth:'', nickname:''
 })
 
 const dispatch = useDispatch();
@@ -24,7 +24,7 @@ const handleChange = (e: { preventDefault: () => void; target: { name: string; v
         dispatch(userActions.joinRequest(user))
         console.log(JSON.stringify(user))
         setUser({
-          username:'', password:'', email:'', name:'', phone:'', birth:'', nickname:''
+          username:'', password:'', name:'', phone:'', birth:'', nickname:''
         })
       }
     }>
@@ -54,9 +54,6 @@ const handleChange = (e: { preventDefault: () => void; target: { name: string; v
         <input onChange = {handleChange} type="text" className="form-control" id="nickname" name='nickname' placeholder="NickName" />
         <label htmlFor="floatingNickName"><h5>NickName</h5></label>
       </div>
-      <div className="form-floating">
-        <input onChange = {handleChange} type="text" className="form-control" id="email" name='email' placeholder="E-mail" />
-        <label htmlFor="floatingPassword"><h5>E-Mail</h5></label>
       </div>
       <div className="form-floating">
         <input onChange = {handleChange} type="text" className="form-control" id="phone" name='phone' placeholder="Phone Number" />
@@ -68,8 +65,7 @@ const handleChange = (e: { preventDefault: () => void; target: { name: string; v
         <div className="custom-control custom-checkbox">
             <input type="checkbox" className="custom-control-input" id="aggrement" required/>
             <label className="custom-control-label" htmlFor="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
-          </div>
-        </div>  
+          </div>  
             <p className="mt-5 mb-3 text-muted">&copy; TMC 2022</p>
     </form>    
     </>)
