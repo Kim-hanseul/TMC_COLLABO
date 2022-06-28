@@ -9,7 +9,6 @@ const data: NavigationItem[] = [
   {
     title: '홈으로',
     link: '/',
-    active: ['/homepages/'],
   },
   {
     title: '나의 식단',
@@ -31,6 +30,8 @@ const data: NavigationItem[] = [
     ],
   },
   { title: '팀', link: '/team/team', active: [] },
+  { title: '로그인', link: '/users/login', active: [] },
+  { title: '회원가입', link: '/users/join', active: ['users/FindAccount'], subMenu: [ {title: '아이디 찾기', link: 'users/findAccount'}] },
 ];
 
 export default data;

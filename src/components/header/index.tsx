@@ -1,8 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Navigation from './shared/navigation';
 import Link from 'next/link';
-import classNames from 'classnames';
-import { renderThemeClass } from '@common/functions';
 
 const Header = ({ theme }: { theme?: 'primary' | 'secondary' | 'third' | 'fourth' }) => {
   const [isOpenNavMobile, setIsOpenNavMobile] = useState<boolean>(false);
