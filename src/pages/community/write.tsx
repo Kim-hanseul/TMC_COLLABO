@@ -1,7 +1,5 @@
 import Layout from '@components/layout';
 import Breadcrumb, { BreadcrumbItem } from '@components/other/breadcrumb';
-import Instagram from '@components/sections/instagram';
-import ShopLayout from '@components/shop';
 import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import styled from 'styled-components';

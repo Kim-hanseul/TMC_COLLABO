@@ -1,7 +1,8 @@
 
 
 header {
-  box-shadow: 0px 10px 10px 0 rgba(48, 68, 78, 0.1);
+  background-color:rgb(255, 255, 255);
+  box-shadow: 0px 5px 5px 0 rgba(48, 68, 78, 0.1);
   font-size: 16px;
   position: absolute;
   top: 0;
@@ -10,7 +11,7 @@ header {
   z-index: 100;
   border: 2cm;
   transition: all 0.5s ease;
-  background-color: #fff;
+  
   .header-wrapper {
     padding: 20px 0;
     @include prefix(transition, $transition);
@@ -57,7 +58,7 @@ header {
           }
           &:hover {
             .dropdown-menu {
-              opacity: 0.8;
+              opacity: 0.85;
               visibility: visible;
             }
             & > a {
@@ -71,8 +72,8 @@ header {
             @include prefix(transition, $transition);
             left: 0;
             padding: 30px 50px;
-            background-color: #fff;
-            box-shadow: 0px 3px 3px 0 rgba(48, 68, 78, 0.1);
+            background-color: #f8f8f8f4;
+            box-shadow: 0px 5px 5px 0 rgba(48, 68, 78, 0.1);
             border: 2mm;
             visibility: hidden;
             z-index: 10;

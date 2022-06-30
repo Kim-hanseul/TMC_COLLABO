@@ -1,5 +1,5 @@
 import { ThemeVariation } from '@common/enum';
-import Header from '@components/header';
+import Header from 'components/header';
 import { SECTION_SPACING } from 'common/variables';
 import Head from 'next/head';
 import { ReactNode } from 'react';

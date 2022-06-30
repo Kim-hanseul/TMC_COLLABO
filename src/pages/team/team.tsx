@@ -1,8 +1,6 @@
 import Layout from '@components/layout';
 import Breadcrumb, { BreadcrumbItem } from '@components/other/breadcrumb';
 import React from 'react';
-import styles from 'styles/team.module.css'
-import styled from 'styled-components'
 
 const About = () => {
  
@@ -31,6 +29,11 @@ const About = () => {
                         <td><a href="https://github.com/sol2kwon">권 솔 이</a></td>
                     </tr>
                 </tbody>
+                <style jsx>{`
+                td{
+                  top:50%;
+                }`}
+                </style>
             </table>
         </div>
     </Layout>

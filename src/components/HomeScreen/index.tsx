@@ -1,29 +1,33 @@
-import Layout from '@components/layout';
+import { ReactNode} from 'react';
 
-const Home = () => {
+
+interface HomeScreenProps {
+  children : ReactNode;
+  title? : string;
+}
+
+const HomeScreen =({children} : HomeScreenProps)=> {
   return (
     <body>
-    <div id="main">
-    <Layout title="Home">
-    </Layout>
-    <div id="contents">
-        <h1>Main Screen</h1>
-        <a href='foodSchedule/foodScheduleMake'>식단 짜기</a>
-       </div>
+      <div id="HomeScreen">
+        <div id="contents">
+          <h1>메인화면</h1>
+          <a href='foodSchedule/foodScheduleMake'>식단 짜기</a>
+        </div>
        <style jsx>{`
         html, body{
         margin: 0;
         padding: 0;
         }
-        h1{
+        h1, p {
         margin: 0;
         }
         a{
           color : inherit;
           text-decoration: none;
         }
-        #main{
-        background: url(https://pixabay.com/get/g268fd734b82a3a6c7b56a72bfabf0fc4daadd2c1ad23ae54b0ff35cf53b9ce18ccb738c0098819c3b4939bb0171ac299c7e7f26b9011881d51f21f59550332f191e7712fc913419b6cc4b523ff78dd7c_1920.jpg) no-repeat;
+        #HomeScreen{
+        background: url(https://pixabay.com/get/ge70115902974dffc87a0751430eeed01065ce9938c5f3c0248d0adabaf2013632f0c71520c82819e159ad8c3f4c1c65814f1a07bb65e8604325191d9607a4626e966aeb06bf06f0e87602d14e1374d86_1920.jpg) no-repeat;
         background-size: cover;
         background-position: center center;
         width : 100vw;
@@ -60,11 +64,12 @@ const Home = () => {
         background-color : #fde5e543;
       }
        `}
-        
       </style>
-          </div>
-          </body>
+      </div>
+    
+    </body>
+    
   );
 };
 
-export default Home;
+export default HomeScreen;
