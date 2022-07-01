@@ -3,7 +3,6 @@ import classNames from 'classnames';
 import { PostProps } from './shared/index';
 import moment from 'moment';
 import Link from 'next/link';
-import { PostCoverType } from '@store/slices/posts';
 
 const PostImageLess = ({
   data,

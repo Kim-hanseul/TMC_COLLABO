@@ -11,14 +11,6 @@ const foodMake = () => {
   return (
     <Layout title="Ranking">
       <div className="container">
-      <Breadcrumb>
-          <BreadcrumbItem href="/" startIcon={<i className="fas fa-home"></i>}>
-            나의 식단
-          </BreadcrumbItem>
-          <BreadcrumbItem>나만의 식단 짜기</BreadcrumbItem>
-        </Breadcrumb>
-       <PostsListContainer>
-      </PostsListContainer>
       </div>
     </Layout>
   );

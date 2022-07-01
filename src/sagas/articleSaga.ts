@@ -1,4 +1,4 @@
-import { fetchArticleAPI, writeArticleApi } from "apis/articleApi";
+import { fetchArticleAPI, writeArticleApi } from "apis/boardApi";
 import { Article, ArticleActions, writeBoard, writeBoardFailure, writeBoardSuccess } from "modules/boards";
 import { userActions } from "modules/users/join";
 import { loginFailure, loginSuccess } from "modules/users/login";

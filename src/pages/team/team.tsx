@@ -7,12 +7,6 @@ const About = () => {
   return (
     <Layout title="About Team">
       <div className="container">
-        <Breadcrumb>
-          <BreadcrumbItem href="/" startIcon={<i className="fas fa-home"></i>}>
-            홈
-          </BreadcrumbItem>
-          <BreadcrumbItem>팀소개</BreadcrumbItem>
-        </Breadcrumb>
         <table>
                 <tbody>
                     <tr>

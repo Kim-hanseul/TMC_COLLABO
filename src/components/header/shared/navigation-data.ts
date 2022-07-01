@@ -21,17 +21,17 @@ const data: NavigationItem[] = [
   },
   {
     title: '커뮤니티',
-    link: '/community/boardList',
-    active: ['/community/write', '/community/ranking','/community/checkout' ],
+    link: '/boards/addArticle',
+    active: ['/boards/addArticle', '/boards/boardList','/boards/mypage' ],
     subMenu: [
-      { title: '게시글 올리기', link: '/community/write' },
-      { title: '랭킹 조회', link: '/community/ranking' },
-      { title: '나의 게시글', link: '/community/myPage' },
+      { title: '게시글 올리기', link: '/boards/addArticle' },
+      { title: '글 목록', link: '/boards/boardList' },
+      { title: '나의 게시글', link: '/boards/myPage' },
     ],
   },
   { title: '팀', link: '/team/team', active: [] },
   { title: '로그인', link: '/users/login', active: [] },
-  { title: '회원가입', link: '/users/join', active: ['users/FindAccount'], subMenu: [ {title: '아이디 찾기', link: 'users/findAccount'}] },
+  { title: '회원가입', link: '/users/join', active: [] },
 ];
 
 export default data;

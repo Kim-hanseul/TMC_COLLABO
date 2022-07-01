@@ -12,9 +12,6 @@ interface LayoutProps {
   theme?: ThemeVariation;
 }
 
-const HeaderSpacing = styled.div`
-  height: ${SECTION_SPACING / 14}rem;
-`;
 
 const Layout = ({ children, showHeaderSpacing = true, title, theme }: LayoutProps) => {
   return (
@@ -23,7 +20,6 @@ const Layout = ({ children, showHeaderSpacing = true, title, theme }: LayoutProp
         <title>{title}</title>
       </Head>
       <Header theme={theme} />
-      {showHeaderSpacing && <HeaderSpacing />}
       {children}
     </>
   );

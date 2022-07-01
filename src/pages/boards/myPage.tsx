@@ -8,12 +8,6 @@ const myPage = () => {
   return (
     <Layout title="MyPage">
       <div className="container">
-        <Breadcrumb>
-          <BreadcrumbItem startIcon={<i className="fas fa-home"></i>}>
-            커뮤니티
-          </BreadcrumbItem>
-          <BreadcrumbItem>나의 게시글</BreadcrumbItem>
-        </Breadcrumb>
       </div>
     </Layout>
   );

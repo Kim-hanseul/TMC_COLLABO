@@ -6,8 +6,6 @@ export interface Article{
     title: string,
     content: string,
     picture?: any | undefined,
-    height : string,
-    weight: string
 }
 export interface GetArticle{
 

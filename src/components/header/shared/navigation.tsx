@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import data from './navigation-data';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
@@ -15,7 +15,7 @@ const Navigation = ({ isOpenNavMobile, setIsOpenNavMobile }: NavigationProps) =>
   useEffect(() => {
     const onWindowResize = () => {
       if (!window.matchMedia('(max-width: 768px)').matches) {
-        setIsOpenNavMobile(false);
+       setIsOpenNavMobile(false);
       }
     };
 
@@ -58,7 +58,6 @@ const Navigation = ({ isOpenNavMobile, setIsOpenNavMobile }: NavigationProps) =>
           })}
         </ul>
       </nav>
-
     </>
   );
 };
