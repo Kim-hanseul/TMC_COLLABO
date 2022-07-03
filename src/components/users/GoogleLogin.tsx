@@ -1,4 +1,4 @@
-import { useScript } from "@hooks";
+import { useScript } from "@/hooks";
 import { RefObject, useRef, useState } from "react";
 
 

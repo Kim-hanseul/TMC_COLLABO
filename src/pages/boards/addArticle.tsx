@@ -1,4 +1,4 @@
-import Layout from '@components/layout';
+import { Nav } from '@/components/Nav';
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAppDispatch } from 'hooks'
@@ -11,13 +11,11 @@ export interface ArticleWrite {
   title: string,
   content: string,
   picture?: any | undefined,
-  height: string,
-  weight: string
 }
 
 const AddArticle: NextPage = () =>  {
   const [write, setWrite] = useState<ArticleWrite>({
-    title: '', content: '', height: '', weight: '', picture: null
+    title: '', content: '', picture: null
   })
   const dispatch = useAppDispatch()
   const onChange = (e: React.FormEvent<HTMLInputElement>) => {
@@ -32,11 +30,11 @@ const AddArticle: NextPage = () =>  {
   }
 
   return (
-    <Layout title="글쓰기">
+    <>
       <div className="container">
       <AddBoard onChange={onChange} onSubmit = {onSubmit}/>
       </div>
-    </Layout>
+    </>
   );
 };
 

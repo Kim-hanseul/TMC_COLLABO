@@ -1,11 +1,10 @@
 import React, { useCallback, useEffect, useState } from 'react'
-import AllBoardList from 'components/boards/BoardList'
-import { useAppDispatch, useAppSelector } from 'hooks'
+import AllBoardList from '@/components/boards/BoardList'
+import { useAppDispatch, useAppSelector } from '@/hooks'
 import { NextPage } from 'next'
-import { ArticleState, fetchBoards, fetchBoardSuccess } from 'modules/boards'
+import { ArticleState, fetchBoards, fetchBoardSuccess } from '@/modules/boards'
 import { useDispatch, useSelector } from 'react-redux'
-import { wrapper } from 'modules/store'
-import Layout from 'components/layout'
+import { wrapper } from '@/modules/store'
  
 export interface fetchBoardData {
     articleId?: number,
@@ -39,11 +38,11 @@ const AllBoardListPage: NextPage = () => {
   
   // 무한 loop 생성 https://typeofnan.dev/fix-the-maximum-update-depth-exceeded-error-in-react/
   return (
-    <Layout title="커뮤니티">
+    
       <div className="container">
       <AllBoardList data = {data}/>
       </div>
-    </Layout>
+
   )
 }
 

@@ -1,12 +1,17 @@
-import '@styles/styles.scss';
-import { wrapper } from '@modules/store';
+import '../styles/globals.css'
+import type { AppProps } from 'next/app'
+import LoginTestPage from './users/loginTest'
+import { wrapper } from '@/modules/store'
+import { Nav } from '@/components/Nav'
 
-
-function MyApp({ Component, pageProps }: { Component: any; pageProps: any }) {
-    return (
-        <Component {...pageProps} />
-    );
-  ;
+function MyApp({ Component, pageProps: {...pageProps} }: AppProps) {
+  return ( 
+    <>
+    <Nav/>
+    <Component {...pageProps} />
+    <LoginTestPage />
+    </>
+  )
 }
 
-export default wrapper.withRedux(MyApp);
+export default wrapper.withRedux(MyApp)
