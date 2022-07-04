@@ -50,4 +50,4 @@ const AddBoard: React.FC<Props> = ({onChange, onSubmit}) => {
   )
 }
 
-export default AddBoard
+export default AddBoard;

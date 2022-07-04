@@ -7,7 +7,7 @@ import { Nav } from '@/components/Nav'
 function MyApp({ Component, pageProps: {...pageProps} }: AppProps) {
   return ( 
     <>
-    <Nav/>
+    
     <Component {...pageProps} />
     <LoginTestPage />
     </>
