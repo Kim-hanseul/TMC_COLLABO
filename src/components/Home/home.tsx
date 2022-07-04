@@ -1,10 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import Dots from "./dots";
+interface ddd{
+  
+}
 const Main = () => {
-  const outerDivRef = useRef();
+  const outerDivRef = useRef<any>();
   const [scrollIndex, setScrollIndex] = useState(1);
   useEffect(() => {
-    const wheelHandler = (e) => {
+    const wheelHandler = (e: any) => {
       e.preventDefault();
       const DIVIDER_HEIGHT = 5;
       const { deltaY } = e;
