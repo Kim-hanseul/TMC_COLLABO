@@ -1,10 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import React, {useEffect, useState} from 'react'
-import Link from 'next/link'
-import styled from 'styled-components';
 import JoinPage from '@/pages/users/join';
 import LoginPage from '@/pages/users/login';
 import LogoutPage from '@/pages/users/logout';
+import styled from "styled-components";
 
     
 export function Nav() {
@@ -16,44 +15,42 @@ export function Nav() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-            <Link href="/">
             <a className="navbar-brand col" >
                 <img src="clozet-black.svg" style={{width:90+"px"}}/>
             </a>
-            </Link>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
         </button>
 
-    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+        <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
     
-    <li className="nav-item dropdown">
+        <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
         나의 식단 짜기
         </a>
-    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <li><a className="dropdown-item" href="/foodSchedule/foodScheduleCalendar">나의 식단 캘린더</a></li>
         <li><a className="dropdown-item" href="/foodSchedule/foodScheduleMake">나만의 식단 짜기</a></li>
-    </ul>
-    </li>
+        </ul>
+        </li>
 
 
-    <li className="nav-item dropdown">
+        <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
         커뮤니티
         </a>
-    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <li><a className="dropdown-item" href="/boards/addArticle">게시물 올리기</a></li>
         <li><a className="dropdown-item" href="/boards/myPage">나의 게시물</a></li>
         <li><a className="dropdown-item" href="/boards/boardList">게시글 목록</a></li>
-    </ul>
-    </li>
-    <li className="nav-item dropdown">
+        </ul>
+        </li>
+        <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
         나의 페이지
         </a>
-    <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+        <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
         <li><a className="dropdown-item" href="/users/remove">계정 삭제</a></li>
         <li><a className="dropdown-item" href="/users/update">계정 수정</a></li>
         <li><a className="dropdown-item" href="/users/findAccount">계정 찾기</a></li>
@@ -62,10 +59,9 @@ export function Nav() {
         </ul>
             <div>
                 {item === null ?
-
                 <div>
                 <button  type = 'button' className='btn btn-dark' data-bs-toggle="modal" data-bs-target="#modal1">
-                <h5>Register</h5>
+                <h5>회원가입</h5>
                 </button>
                 <div className="modal fade" id="modal1"tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
@@ -83,7 +79,7 @@ export function Nav() {
             
             &nbsp;
             <button  type = 'button' className='btn btn-dark' data-bs-toggle="modal" data-bs-target="#modal2">
-                <h5>Login</h5>
+                <h5>로그인</h5>
                 </button>
                 <div className="modal fade" id="modal2"tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div className="modal-dialog">
@@ -100,7 +96,6 @@ export function Nav() {
             </div>
             &nbsp;
             </div>:
-
             <div>
                 <LogoutPage/>
             </div>

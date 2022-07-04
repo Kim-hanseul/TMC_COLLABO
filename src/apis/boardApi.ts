@@ -5,7 +5,7 @@ const headers = {
     "Content-Type" : "application/json",
     Authorization: "JWT fefege...",
 }
-export const writeArticleApi = async (
+export const writeBoardApi = async (
     writeData: Article) => {
         try {
             console.log(`API 진입 + ${JSON.stringify(writeData)}`)
@@ -15,7 +15,7 @@ export const writeArticleApi = async (
         }
     }
 
-export const fetchArticleAPI = async () => {
+export const fetchBoardAPI = async () => {
     try{
         console.log(`API 진입`)
         const response : AxiosResponse = await axios.get(`${SERVER}/articles/findAll`, {headers})
