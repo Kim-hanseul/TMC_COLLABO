@@ -4,11 +4,11 @@ const Dot = ({ num, scrollIndex }) => {
       style={{
         width: 25,
         height: 25,
-        border: "2px solid white",
+        border: "4px solid white",
         borderRadius: 999,
         backgroundColor: scrollIndex === num ? "white" : "transparent",
         transitionDuration: 1000,
-        transition: "background-color 0.5s",
+        transition: "background-color 0.7s",
       }}
     ></div>
   );
@@ -16,7 +16,7 @@ const Dot = ({ num, scrollIndex }) => {
 
 const Dots = ({ scrollIndex }) => {
   return (
-    <div style={{ position: "fixed", top: "50%", right: 100 }}>
+    <div style={{ position: "fixed", top: "80%", right: 100 }}>
       <div
         style={{
           display: "flex",
@@ -24,7 +24,7 @@ const Dots = ({ scrollIndex }) => {
           justifyContent: "space-between",
           alignItems: "center",
           width: 20,
-          height: 100,
+          height: 130,
         }}
       >
         <Dot num={1} scrollIndex={scrollIndex}></Dot>

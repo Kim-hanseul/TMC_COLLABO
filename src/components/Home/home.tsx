@@ -1,8 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Dots from "./dots";
-interface ddd{
-  
-}
+import Image from 'next/image'
+import gogo from "../TooMuchCoder.png"
+
 const Main = () => {
   const outerDivRef = useRef<any>();
   const [scrollIndex, setScrollIndex] = useState(1);
@@ -86,7 +86,9 @@ const Main = () => {
   <>
       <div ref={outerDivRef} className="outer">
       <Dots scrollIndex={scrollIndex} />
-      <div className="inner bg-yellow">Test Page</div>
+      <div className="bg-yellow">
+        <div className="text">5분도 아까운 때에<br/>개인 식단까지 짜야한다고?</div>
+      </div>
       <div className="divider"></div>
       <div className="inner2 bg-blue">Test Page 2</div>
       <div className="divider"></div>
@@ -96,22 +98,25 @@ const Main = () => {
                         margin: 0;
                         overflow-y: hidden;
                       }
-
                       .outer {
                         height: 100vh;
                         overflow-y: auto;
                       }
-
                       /* 화면에서 스크롤바 안보이게 */
                       .outer::-webkit-scrollbar {
                         display: none;
                       }
-
-                      .inner {
-                        img : src();
-                        
+                      .text{
+                        font-size : 80px;
+                        font-family : 'Nanum Brush Script';
+                        position: relative;
+                        top: 250px;
+                        left: 250px;
+                        color : white;
                       }
-
+                      .inner {
+                       
+                      }
                       .inner2 {
                         height: 100vh;
                         display: flex;
@@ -121,33 +126,26 @@ const Main = () => {
                         font-size: 100px;
                         font-family : 'Yeon Sung'
                       }
-
                       .bg-yellow {
-                        background : url(https://pixabay.com/get/gcf668f07c118899323d267093cca4d4440fbc4dde5ad49c0fa6ce89722105e5966b4b5809ec2dbff953b35248bfc3dffad57cc49aba55b2cd5b5a4c496d65fdf_1920.jpg);
-                        background-position: center;
-                        width: 100vw;
-                        height: 100vh; 
+                        background-color:#31945d;
+                        height : 100vh;
+                        
                       }
-
                       .bg-blue {
                         background-color: #b6d8f2;
                       }
-
                       .bg-pink {
                         background-color: #f4cfdf;
                       }
-
                       .divider {
                         width: 10%;
                         height: 1px;
                         background-color: gray;
                       }
-        `} 
+                      `} 
          </style>
       </div>
   </>
-
   );   
 }
-
 export default Main;

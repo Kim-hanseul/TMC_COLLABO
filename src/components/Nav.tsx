@@ -1,9 +1,13 @@
 import 'bootstrap/dist/css/bootstrap.css'
 import React, {useEffect, useState} from 'react'
+import Home from '@/components/Home/home'
 import JoinPage from '@/pages/users/join';
 import LoginPage from '@/pages/users/login';
 import LogoutPage from '@/pages/users/logout';
 import styled from "styled-components";
+import Link from 'next/link';
+import Image from 'next/image';
+import gogo from "./TooMuchCoder.png";
 
     
 export function Nav() {
@@ -15,22 +19,14 @@ export function Nav() {
     return (
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
             <div className="container">
-            <a className="navbar-brand col" >
-                <img src="clozet-black.svg" style={{width:90+"px"}}/>
-            </a>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span className="navbar-toggler-icon"></span>
-        </button>
-
         <div className="collapse navbar-collapse" id="navbarSupportedContent">
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
-    
         <li className="nav-item dropdown">
         <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown"  aria-expanded="false">
         나의 식단 짜기
         </a>
         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a className="dropdown-item" href="/foodSchedule/foodScheduleCalendar">나의 식단 캘린더</a></li>
+        <li><Link href="/foodSchedule/foodScheduleCalendar"><a className="dropdown-item" >나의 식단 캘린더</a></Link></li>
         <li><a className="dropdown-item" href="/foodSchedule/foodScheduleMake">나만의 식단 짜기</a></li>
         </ul>
         </li>
@@ -78,7 +74,8 @@ export function Nav() {
             </div>
             
             &nbsp;
-            <button  type = 'button' className='btn btn-dark' data-bs-toggle="modal" data-bs-target="#modal2">
+            &nbsp;
+            <button type ='button' className='btn btn-dark' data-bs-toggle="modal" data-bs-target="#modal2">
                 <h5>로그인</h5>
                 </button>
                 <div className="modal fade" id="modal2"tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
