@@ -7,7 +7,7 @@ const PostsListContainer = styled.div`
 
 const foodCalendar = () => {
   return (
-      <div className="container">
+      <div>
       </div>
   );
 };

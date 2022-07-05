@@ -9,8 +9,9 @@ const PostsListContainer = styled.div`
 
 const foodMake = () => {
   return (
-      <div className="container">
-      </div>
+      <>
+      </>
+     
   );
 };
 

@@ -17,6 +17,7 @@ class MyDocument extends Document {
                 <link href="https://fonts.googleapis.com/css2?family=Gowun+Batang&display=swap" rel="stylesheet"/>
                 <link href="https://fonts.googleapis.com/css2?family=Do+Hyeon&family=Lobster&family=Pacifico&family=Press+Start+2P&display=swap" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet"></link>
+                <link href="https://fonts.googleapis.com/css2?family=Yeon+Sung&display=swap" rel="stylesheet"></link>
                 <script src="https://accounts.google.com/gsi/client" async defer></script>
                 <meta
               name="viewport"

@@ -2,11 +2,11 @@ const Dot = ({ num, scrollIndex }) => {
   return (
     <div
       style={{
-        width: 20,
-        height: 20,
-        border: "1px solid black",
+        width: 25,
+        height: 25,
+        border: "2px solid white",
         borderRadius: 999,
-        backgroundColor: scrollIndex === num ? "black" : "transparent",
+        backgroundColor: scrollIndex === num ? "white" : "transparent",
         transitionDuration: 1000,
         transition: "background-color 0.5s",
       }}

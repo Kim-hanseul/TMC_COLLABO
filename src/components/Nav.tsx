@@ -51,8 +51,8 @@ export function Nav() {
         나의 페이지
         </a>
         <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
-        <li><a className="dropdown-item" href="/users/remove">계정 삭제</a></li>
-        <li><a className="dropdown-item" href="/users/update">계정 수정</a></li>
+        <li><a className="dropdown-item" href="/users/remove">계정 탈퇴</a></li>
+        <li><a className="dropdown-item" href="/users/update">계정 정보 수정</a></li>
         <li><a className="dropdown-item" href="/users/findAccount">계정 찾기</a></li>
     </ul>
     </li>

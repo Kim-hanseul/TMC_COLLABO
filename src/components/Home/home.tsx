@@ -88,11 +88,11 @@ const Main = () => {
       <Dots scrollIndex={scrollIndex} />
       <div className="inner bg-yellow">Test Page</div>
       <div className="divider"></div>
-      <div className="inner bg-blue">Test Page 2</div>
+      <div className="inner2 bg-blue">Test Page 2</div>
       <div className="divider"></div>
-      <div className="inner bg-pink">Test Page 3</div>
+      <div className="inner2 bg-pink">Test Page 3</div>
            <style jsx>{`
-                body {
+                      body {
                         margin: 0;
                         overflow-y: hidden;
                       }
@@ -108,15 +108,25 @@ const Main = () => {
                       }
 
                       .inner {
+                        img : src();
+                        
+                      }
+
+                      .inner2 {
                         height: 100vh;
                         display: flex;
                         justify-content: center;
+                        text-align : center;
                         align-items: center;
                         font-size: 100px;
+                        font-family : 'Yeon Sung'
                       }
 
                       .bg-yellow {
-                        background-color: #f7f6cf;
+                        background : url(https://pixabay.com/get/gcf668f07c118899323d267093cca4d4440fbc4dde5ad49c0fa6ce89722105e5966b4b5809ec2dbff953b35248bfc3dffad57cc49aba55b2cd5b5a4c496d65fdf_1920.jpg);
+                        background-position: center;
+                        width: 100vw;
+                        height: 100vh; 
                       }
 
                       .bg-blue {
@@ -128,8 +138,8 @@ const Main = () => {
                       }
 
                       .divider {
-                        width: 100%;
-                        height: 5px;
+                        width: 10%;
+                        height: 1px;
                         background-color: gray;
                       }
         `} 
