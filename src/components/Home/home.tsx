@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Dots from "./dots";
 import Image from 'next/image'
 import gogo from "../no-background.png"
+import balloon2 from "../balloon2.png"
 import { Nav2 } from "../Nav2";
 
 const Main = () => {
@@ -86,13 +87,16 @@ const Main = () => {
     return(
   <>
       <div ref={outerDivRef} className="outer">
-      <Nav2/>
+      
       <Dots scrollIndex={scrollIndex} />
       <div className="bg-first">
-        <div className="kid">
-        <Image className="kid" src={gogo} alt="kid"></Image>
-        </div>
-        <div className="text">"오늘 뭐먹지?"<br/>고민할 것도 많은데<br/>식단까지? </div>
+          <div className="kid">
+          <Image className="kid" src={gogo} alt="kid"></Image>
+          </div>
+          <div className="balloon2">
+          <Image className="balloon2" src={balloon2} alt="balloon2"></Image>
+          </div>
+          <div className="text">"오늘 뭐 먹지?"<br/>고민할 것도 많은데<br/>식단까지? </div>
       </div>
       <div className="divider"></div>
       <div className="inner2 bg-second">Test Page 2</div>
@@ -104,6 +108,7 @@ const Main = () => {
                         overflow-y: auto;
                       }
                       .bg-first {
+                        position : relative;
                         background-color:#4ab379;
                         height : 100vh;
                                   }
@@ -114,8 +119,8 @@ const Main = () => {
                       .text {
                         font-size : 100px;
                         font-family : 'Nanum Brush Script';
-                        position : relative;
-                        top: -300px;
+                        position : absolute;
+                        top: 200px;
                         left: 500px;
                         color : white;
                       }
@@ -125,6 +130,13 @@ const Main = () => {
                         overflow: hidden;
                         top: 50%;
                         left : 50%;
+                      }
+                      .balloon2{
+                        position : relative;
+                        object-fit: fill;
+                        overflow: hidden;
+                        top: -200px;
+                        left : 500px;
                       }
                       .inner2 {
                         height: 100vh;
