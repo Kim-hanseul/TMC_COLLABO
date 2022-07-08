@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import Dots from "./dots";
 import Image from 'next/image'
-import gogo from "../TooMuchCoder.png"
+import gogo from "../no-background.png"
+import { Nav2 } from "../Nav2";
 
 const Main = () => {
   const outerDivRef = useRef<any>();
@@ -85,37 +86,45 @@ const Main = () => {
     return(
   <>
       <div ref={outerDivRef} className="outer">
+      <Nav2/>
       <Dots scrollIndex={scrollIndex} />
-      <div className="bg-yellow">
-        <div className="text">5분도 아까운 때에<br/>개인 식단까지 짜야한다고?</div>
+      <div className="bg-first">
+        <div className="kid">
+        <Image className="kid" src={gogo} alt="kid"></Image>
+        </div>
+        <div className="text">"오늘 뭐먹지?"<br/>고민할 것도 많은데<br/>식단까지? </div>
       </div>
       <div className="divider"></div>
-      <div className="inner2 bg-blue">Test Page 2</div>
+      <div className="inner2 bg-second">Test Page 2</div>
       <div className="divider"></div>
-      <div className="inner2 bg-pink">Test Page 3</div>
+      <div className="inner2 bg-third">Test Page 3</div>
            <style jsx>{`
-                      body {
-                        margin: 0;
-                        overflow-y: hidden;
-                      }
                       .outer {
                         height: 100vh;
                         overflow-y: auto;
                       }
+                      .bg-first {
+                        background-color:#4ab379;
+                        height : 100vh;
+                                  }
                       /* 화면에서 스크롤바 안보이게 */
                       .outer::-webkit-scrollbar {
                         display: none;
                       }
-                      .text{
-                        font-size : 80px;
+                      .text {
+                        font-size : 100px;
                         font-family : 'Nanum Brush Script';
-                        position: relative;
-                        top: 250px;
-                        left: 250px;
+                        position : relative;
+                        top: -300px;
+                        left: 500px;
                         color : white;
                       }
-                      .inner {
-                       
+                      .kid {
+                        position : relative;
+                        object-fit: fill;
+                        overflow: hidden;
+                        top: 50%;
+                        left : 50%;
                       }
                       .inner2 {
                         height: 100vh;
@@ -126,15 +135,11 @@ const Main = () => {
                         font-size: 100px;
                         font-family : 'Yeon Sung'
                       }
-                      .bg-yellow {
-                        background-color:#31945d;
-                        height : 100vh;
-                        
-                      }
-                      .bg-blue {
+                      
+                      .bg-second {
                         background-color: #b6d8f2;
                       }
-                      .bg-pink {
+                      .bg-third {
                         background-color: #f4cfdf;
                       }
                       .divider {
