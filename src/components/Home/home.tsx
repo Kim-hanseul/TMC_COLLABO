@@ -2,8 +2,6 @@ import { useEffect, useRef, useState } from "react";
 import Dots from "./dots";
 import Image from 'next/image'
 import gogo from "../no-background.png"
-import balloon2 from "../balloon2.png"
-import { Nav2 } from "../Nav2";
 
 const Main = () => {
   const outerDivRef = useRef<any>();
@@ -93,10 +91,7 @@ const Main = () => {
           <div className="kid">
           <Image className="kid" src={gogo} alt="kid"></Image>
           </div>
-          <div className="balloon2">
-          <Image className="balloon2" src={balloon2} alt="balloon2"></Image>
-          </div>
-          <div className="text">"오늘 뭐 먹지?"<br/>고민할 것도 많은데<br/>식단까지? </div>
+        <div className="text" img src="../balloon2.png">"오늘 뭐 먹지?"<br/>고민할 것도 많은데<br/>식단까지? </div>
       </div>
       <div className="divider"></div>
       <div className="inner2 bg-second">Test Page 2</div>
@@ -123,6 +118,7 @@ const Main = () => {
                         top: 200px;
                         left: 500px;
                         color : white;
+                        background-image : url("../balloon2.png");
                       }
                       .kid {
                         position : relative;
@@ -137,6 +133,9 @@ const Main = () => {
                         overflow: hidden;
                         top: -200px;
                         left : 500px;
+                      }
+                      .ballon2 Image{
+
                       }
                       .inner2 {
                         height: 100vh;

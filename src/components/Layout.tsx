@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react'
+import Main from "@/components/Home/home";
+import { Nav2 } from './Nav2'
 
-import { Nav } from './Nav'
 
 type LayoutProps = {
     children: ReactNode
@@ -9,8 +10,10 @@ type LayoutProps = {
 const Layout = ({children}: LayoutProps) => {
   return (
     <div>
-        <Nav/>
         <main>
+          <Main>
+          <Nav2/>
+          </Main>
             {children}
         </main>
     </div>

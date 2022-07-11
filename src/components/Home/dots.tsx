@@ -16,7 +16,7 @@ const Dot = ({ num, scrollIndex }) => {
 
 const Dots = ({ scrollIndex }) => {
   return (
-    <div style={{ position: "fixed", top: "80%", right: 100 }}>
+    <div style={{ position: "fixed", top: "80%", right: 100, zIndex:1  }}>
       <div
         style={{
           display: "flex",

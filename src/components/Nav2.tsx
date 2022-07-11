@@ -1,4 +1,12 @@
+import React, {useEffect, useState} from 'react'
+
 export function Nav2() {
+    const [item, setItem] = useState(null)
+    useEffect (()=> {
+        let item : any = localStorage.getItem('loginSuccessUser');
+        //let googleItem: any = windo.getItem()
+        setItem(item)
+    },[])
     
     return (
         <nav>
@@ -8,17 +16,17 @@ export function Nav2() {
 			<ul>
 				<li><a href="#">나의 식단 관리</a></li>
 				<li><a href="#">식단 캘린더</a>
-                    <ul>
+                    {/* <ul>
 						<li><a href="#">HTML</a></li>
 						<li><a href="#">CSS</a></li>
-					</ul>
+					</ul> */}
                 </li>
 			</ul>
 		</li>
 		<li><a href="#">커뮤니티</a>
 			<ul>
-				<li><a href="#">Web Design</a></li>
-				<li><a href="#">User Experience</a></li>
+				<li><a href="#">나의 게시글</a></li>
+				<li><a href="#">커뮤니티 랭킹 확인하기</a></li>
 			</ul>
 		</li>
 		<li><a href="#">ABOUT PROJECT</a></li>
@@ -31,7 +39,8 @@ export function Nav2() {
             padding: 0;
             margin: 0;
             height: 60px;
-            position:relative;
+            position:fixed;
+            z-index:1;
             }
 
             nav ul {
