@@ -25,9 +25,6 @@ export function Nav2() {
         <ul className="navbar-nav me-auto mb-2 mb-lg-0">    
         { item !== null ? 
         <><li className="nav-item dropdown">
-                            <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                Closet
-                            </a>
                         </li><li className="nav-item dropdown">
                                 <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                                     UserPage
@@ -80,7 +77,7 @@ export function Nav2() {
         
         &nbsp;
         </div>:
-        
+
         <div>
             <LogoutPage/>
         </div>

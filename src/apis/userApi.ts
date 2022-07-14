@@ -17,19 +17,24 @@ export interface UserType{
     username: string,
     password: string,
     name: string,
-    birth: string,
     nickname: string,
-    email: string,
-    phone: string
+    phone: string,
+    email : string,
+    weight : string, 
+    height : string,
+    gender : string,   
 } 
 export interface LoginType{
     userId?: number,
     username: string,
     password: string,
     name: string,
-    birth: string,
     nickname: string,
-    phone: string
+    phone: string,
+    email : string,
+    weight : string, 
+    height : string,
+    gender : string, 
 }
 
 //
@@ -38,9 +43,9 @@ export const userJoinApi = async (
         username: string,
         password: string,
         name: string,
-        birth: string,
         nickname: string,
-        phone: string
+        phone: string,
+        email : string,
         weight : string, 
         height : string,
         gender : string,
@@ -50,7 +55,7 @@ export const userJoinApi = async (
             console.log(typeof({payload}))
             const response : AxiosResponse<any, UserType[]> =
             await axios.post(`${SERVER}/users/join`, payload, { headers })
-            alert(`진행5 : 응답 성공 + ${JSON.stringify(response.data)}`)
+            if(response.data.message == "SUCCESS") { alert('회원가입 성공') }
             return response.data
         }catch(err){
             return err;
@@ -129,8 +134,6 @@ export const userJoinApi = async (
         try {
             console.log(`api 진입 + ${JSON.stringify(PayloadAction)}`)
             await axios.delete(`${SERVER}/users/delete`, PayloadAction )
-            
-            
         } catch (err) {
             return err;
 
