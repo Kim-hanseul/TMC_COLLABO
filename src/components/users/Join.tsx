@@ -23,7 +23,7 @@ const Join: React.FC = () => {
 
   // 회원가입 타입
   const [user, setUser] =useState<User>({
-    username:'', password:'', email:'', name:'', phone:'', nickname:'', weight:'', height:'', gender : ''
+    username:'', password:'', email:'', name:'', phone:'', nickname:'', weight:'', height:'',  gender : ''
 })
 const [username, setUsername] = useState<UsernameType>({username: ''}) // 아이디 중복확인
 const [check, setCheck] = useState<CompareType>({checkIdValue: '', checkPwValue: ''})

@@ -36,7 +36,7 @@ const Login : React.FC<Props> =  ({handleChange, handleSubmit} : Props) => {
         <h4>Sign in</h4>
         </button>
       </div>
-            <p className="mt-5 mb-3 text-muted">&copy; clozet 2022</p>
+            <p className="mt-5 mb-3 text-muted">&copy; TMC 2022</p>
     </form> 
       </>
   )
