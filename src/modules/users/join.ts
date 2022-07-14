@@ -1,8 +1,7 @@
 import { createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 export interface User {
-    username:string, password:string, name:string, phone:string, nickname:string, email:string, weight : string, height : string,
-    gender : string, 
+    username:string, password:string, email:string, name:string, phone:string,  nickname:string, weight: string, height: string, gender: string,
 }
 
 export interface UserState{
@@ -24,14 +23,14 @@ export const userSlice = createSlice({
     initialState,
     reducers:{
         joinRequest(state: UserState, action : PayloadAction<User>){
-            console.log(`진행 : 회원가입 데이터 ${state.status, state.data, action.payload}`)
+            console.log(`2. 진행 : 회원가입 데이터 ${action.payload}`)
             state.status = 'loading';
             
         },
         joinSuccess(state: UserState, action : PayloadAction<User>){
             
             state.status = 'idle'
-            console.log(`진행 : 회원가입 데이터 ${state.status, state.data, action.payload}`)
+            //console.log(`진행 : 회원가입 데이터 ${state.status, state.data, action.payload}`)
             state.data = [...state.data, action.payload]
             
         },

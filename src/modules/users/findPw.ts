@@ -1,4 +1,4 @@
-import { UserFindIdInput, UserFindPwInput } from "pages/users/findAccount"
+import { UserFindIdInput, UserFindPwInput } from "@/pages/users/findAccount"
 import { createSlice, PayloadAction } from "@reduxjs/toolkit"
 
 export interface ResultFindPw { // api data

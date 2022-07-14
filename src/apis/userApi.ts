@@ -4,7 +4,7 @@ import { ResultFindPw } from "@/modules/users/findPw";
 import { ResultFindUserName } from "@/modules/users/findUserName";
 import { Token } from "@/modules/users/loadUser";
 import { loginSuccess } from "@/modules/users/login";
-import { UpdateInfo } from "@/pages/users/mypage";
+import { UpdateInfo, UserInfoTest } from "@/pages/users/mypage";
 import { PayloadAction } from "@reduxjs/toolkit";
 import axios, {AxiosError, AxiosResponse} from "axios";
 const SERVER = 'http://127.0.0.1:8080'
@@ -18,11 +18,11 @@ export interface UserType{
     password: string,
     name: string,
     nickname: string,
+    email: string,
     phone: string,
-    email : string,
-    weight : string, 
-    height : string,
-    gender : string,   
+    weight: string,
+    height: string,
+    gender: string,
 } 
 export interface LoginType{
     userId?: number,
@@ -30,11 +30,11 @@ export interface LoginType{
     password: string,
     name: string,
     nickname: string,
+    email: string,
     phone: string,
-    email : string,
-    weight : string, 
-    height : string,
-    gender : string, 
+    weight: string,
+    height: string,
+    gender : string,
 }
 
 //
@@ -44,15 +44,15 @@ export const userJoinApi = async (
         password: string,
         name: string,
         nickname: string,
+        email: string,
         phone: string,
-        email : string,
-        weight : string, 
-        height : string,
+        weight: string,
+        height: string,
         gender : string,
     }) => {
         try{
-            alert(`진행4. API 시도`)   
             console.log(typeof({payload}))
+            alert(`1`)
             const response : AxiosResponse<any, UserType[]> =
             await axios.post(`${SERVER}/users/join`, payload, { headers })
             if(response.data.message == "SUCCESS") { alert('회원가입 성공') }
@@ -82,7 +82,7 @@ export const userJoinApi = async (
         }
     
     export const findUserNameApi = async(
-        findUserNameData : {name: string}) => {
+        findUserNameData : {name: string, email: string}) => {
             try{
                 alert(`Find ID API TRY + ${JSON.stringify(findUserNameData)}`)
                 const response: AxiosResponse<any, ResultFindUserName[]> =
@@ -96,7 +96,7 @@ export const userJoinApi = async (
         // 값 보내야 정보를 주는거니까 post
         //2022-06-25 dispatch 넣기
     export const findUserPwApi = async(
-        findUserPwData : {username: string}) => {
+        findUserPwData : {username: string, email: string}) => {
             try{
                 alert(`Find PASSWORD API TRY`)
                 const response: AxiosResponse<any, ResultFindPw[]> =
@@ -113,7 +113,7 @@ export const userJoinApi = async (
                 console.log(`LOGIN CHECK ${token}`)
                 console.log(JSON.stringify(token))
                 const response: AxiosResponse = await axios.post(`${SERVER}/users/token`, token , {headers})
-                console.log (`서버 응답 + ${JSON.stringify(response.data)}`)
+                console.log (`서버 응답1 + ${JSON.stringify(response.data)}`)
                 return response.data
             } catch (err) {
                 return err;
@@ -134,13 +134,22 @@ export const userJoinApi = async (
         try {
             console.log(`api 진입 + ${JSON.stringify(PayloadAction)}`)
             await axios.delete(`${SERVER}/users/delete`, PayloadAction )
+            
+            
         } catch (err) {
             return err;
 
         }
     }
+
+    export const removeUserTokenApi = async(tokenData : UserInfoTest) => {
+        try{
+            console.log (`토큰 보낼게 + ${JSON.stringify(tokenData)}` )
+            await axios.delete(`${SERVER}/users/delete`, { data: tokenData })
+        } catch (err) { return err;}
+    }
+
     export const checkIdApi = async(PayloadAction: UsernameType) => {
-        // existsByUsername
         try{
             console.log(`API + ${JSON.stringify(PayloadAction)}`)
             const response = await axios.post(`${SERVER}/users/existsByUsername`, PayloadAction)

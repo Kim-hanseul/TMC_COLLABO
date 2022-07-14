@@ -17,7 +17,7 @@ export interface fetchData{
 
 const updatePage : NextPage = () => {
   const [data, setData] = useState<fetchData>({
-    username : '', name: '',  phone: '',  nickname:'', weight:'',height:'', gender:''  })
+    username : '', name: '',  phone: '',  email: '', nickname:'', weight:'',height:'', gender:''  })
 
   // 스토어 내 로그인 정보 가져오겠음.
   const { userInfo } = useAppSelector(state => state.login);

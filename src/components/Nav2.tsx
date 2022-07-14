@@ -77,7 +77,6 @@ export function Nav2() {
         
         &nbsp;
         </div>:
-
         <div>
             <LogoutPage/>
         </div>

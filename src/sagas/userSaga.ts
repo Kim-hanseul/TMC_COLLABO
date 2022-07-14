@@ -24,7 +24,7 @@ interface UserJoinType{
 
 export interface LoginUser{ // api data type
     username:string, password:string, email:string, name:string,
-     phone:string, nickname:string, userId? : number, weight: string,height:string,gender:string
+     phone:string, nickname:string, userId? : number, weight: string, height:string, gender:string
      token: any, roles: any   
 }
 

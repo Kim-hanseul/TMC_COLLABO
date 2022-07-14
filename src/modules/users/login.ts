@@ -1,4 +1,4 @@
-import { LoginType } from 'apis/userApi'
+import { LoginType } from '@/apis/userApi'
 import { createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 export interface UserLoginInput {
@@ -7,8 +7,8 @@ export interface UserLoginInput {
 }
 
 export interface LoginUser{ // api data type
-    username:string, password:string, name:string, email:string,
-     phone:string,  nickname:string, userId? : number, weight: string, height:string,
+    username:string, password:string, email:string, name:string, weight:string, height:string, gender:string,
+     phone:string, nickname:string, userId? : number,
      token: any, roles: any   
 }
 export type LoginState = { // state type
@@ -18,7 +18,6 @@ export type LoginState = { // state type
         isLoggined: boolean,
         status: 'idle' | 'loading' | 'failed'
         error : null;
-        
     }
 
 const initialState: LoginState = {
@@ -37,7 +36,7 @@ export const loginSlice = createSlice({
     reducers: {
         loginRequest(state, action: PayloadAction<UserLoginInput>){
             state.status = 'loading';
-            alert(`2. dispatch로 인한 로그인 액션 리퀘스트 ${JSON.stringify(state.data)}`)
+            alert(`2. dispatch로 인한 로그인 액션 리퀘스트 ${JSON.stringify(action.payload)}`)
             console.log(`진행 : 로그인 데이터 ${JSON.stringify(state.data)}`)
         },
 
@@ -63,114 +62,3 @@ export const {loginRequest, loginSuccess, loginFailure
 const {reducer, actions} = loginSlice
 export const loginActions = actions
 export default loginSlice.reducer
-
-/** 
-import { createDraftSafeSelector, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { slice } from "lodash";
-interface AuthPayload {
-    username: string
-    password: string
-}
-interface AuthInfo {
-    username: string;
-    name: string;
-    phone: string;
-}
-interface AuthState {
-    loginInfo: AuthInfo;
-    authInfo: AuthInfo;
-    actionResult: string;
-    isLoading: boolean;
-    error: string | null;
-    isLogin?: boolean  
-}
-const loginInitialState: AuthState = {
-    authInfo: 
-    {
-        username: '',
-        name: '',
-        phone: ''
-    },
-    actionResult: '',
-    isLoading: false,
-    error: null,
-    
-};
-const reducers = {
-    login : (state: AuthState, { payload }: PayloadAction<AuthPayload>) => {
-        state.actionResult = 'LOGIN_REQUSET'
-        state.isLoading = true;
-        state.error = null;
-    },
-    loginSuccess : (state: AuthState, {payload}: PayloadAction<AuthState>) =>{
-        state.isLogin = true;
-        state.authInfo = payload.loginInfo;
-        state.actionResult = 'LOGIN_OK'
-        state.isLoading = false;
-        state.error = null;
-    },
-    loginFailure : (state: AuthState, action: PayloadAction<string>) => {
-        state.actionResult = 'LOGIN_ERR';
-        state.isLoading = false;
-        state.error = action.payload;
-    },
-    confirmToken: (state: AuthState, { payload } : PayloadAction<AuthPayload> ) =>{
-        state.actionResult = 'CONFIRM_TOKEN_REQ';
-        state.isLoading = true;
-        state.error = null;
-    },
-    confirmTokenSucess : (state: AuthState, {payload}: PayloadAction<AuthState>) => {
-        state.isLogin = true;
-        state.authInfo = payload.loginInfo;
-        state.actionResult = 'CONFIRM_TOKEN_OK'
-        state.isLoading = false;
-        state.error = null;
-    },
-    confirmTokenFailure : (state: AuthState, action: PayloadAction<string>) => {
-        state.actionResult = 'CONFIRM_TOKEN_ERR';
-        state.isLoading = false;
-        state.error = action.payload;
-    },
-    token : (state: AuthState) => {
-        state.isLoading = true;
-        state.actionResult = 'TOKEN_REQ';
-        state.error = ''
-    },
-    tokenSuccess : (state: AuthState, {payload} : PayloadAction<AuthState>) => {
-        state.isLogin = true;
-        state.authInfo = payload.loginInfo;
-        state.actionResult = 'TOKEN_OK'
-        state.isLoading = false;
-        state.error = '';
-    },
-    tokenFailure: (state: AuthState, action: PayloadAction<string>) => {
-        state.isLogin = false;
-        state.isLoading = false;
-        state.actionResult = 'TOKEN_ERR';
-        state.error = action.payload
-    }   
-};
-const loginSlice = createSlice ({
-    name: 'loginSlice',
-    initialState: loginInitialState,
-    reducers: reducers
-})
-const selectAuthInfo = createDraftSafeSelector(
-    (state: AuthState) => state.authInfo,
-    authInfo => authInfo
-)
-const selectStatus = createDraftSafeSelector(
-    (state: AuthState) => state.isLogin,
-    (state: AuthState) => state.actionResult,
-    (state: AuthState) => state.isLoading,
-    (state: AuthState) => state.error,
-    (isLogin, actionResult, isLoading, error) => ({isLogin, actionResult, isLoading, error})
-)
-export const authSelector = {
-    authInfo: state => selectAuthInfo(state[AUTH]),
-    status: state => selectStatus(state[AUTH])
-}
-export const AUTH = slice.name;
-export const loginReducer = slice.reducer;
-export const loginAction = slice.actions;    
-*/

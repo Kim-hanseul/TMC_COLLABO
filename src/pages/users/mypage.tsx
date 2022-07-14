@@ -1,5 +1,5 @@
 import { removeUserTokenApi } from '@/apis/userApi'
-import Mypage, { User } from '@/components/users/Mypage'
+import Mypage, { User } from '@/components/users/mypage'
 import { useAppDispatch } from '@/hooks'
 import { updateRequest } from '@/modules/users/update'
 import { StringIterator } from 'lodash'
