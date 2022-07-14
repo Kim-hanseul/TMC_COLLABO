@@ -13,6 +13,8 @@ const headers = {
 type Props ={
   handleChange : (e : React.FormEvent<HTMLInputElement> ) => void;
   handleSubmit : (e : React.FormEvent<HTMLFormElement>) => void;
+  handleClick : (e : React.MouseEvent<HTMLButtonElement>) => void;
+  // 삭제 토큰 보내기 테스트용 핸들 클릭
 }
 
 export interface User {
@@ -20,16 +22,17 @@ export interface User {
   username?: string,
   password?: string,
   name?: string,
-  birth?: string,
   nickname?: string,
+  email?: string,
   phone?: string,
   token?: string,
-  articles?: []
-  clothes?: []
+  height?: string,
+  weight?: string,
+  gender?: string,
   roles?: any
 }
 
-const Mypage: React.FC<Props> = ({handleChange, handleSubmit} : Props) => {
+const Mypage: React.FC<Props> = ({handleChange, handleSubmit, handleClick} : Props) => {
   const [userInfo, setUserInfo] = useState<Array<User>>([])
   
   useEffect(() => { 
@@ -98,6 +101,31 @@ const Mypage: React.FC<Props> = ({handleChange, handleSubmit} : Props) => {
               </div>
             </div>
           </div>
+  
+          <div className="mb-3">
+            <label htmlFor="email"><h5>이메일 수정</h5></label>
+              <div className="accordion" id="accordionExample3">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="headingThree">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree">
+        내 이메일 : {user.email}
+                    </button>
+                  </h2>
+                    <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                      <div className="accordion-body">
+                      <div className='row'>
+                        <div className='col-md-6 mb-6'>
+                        <h5>수정할 이메일 입력</h5>
+                        </div>
+                        <div className='col'>
+                        <h5><input name='email' onChange={handleChange}/></h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div className="row">
             <div className="col-md-6 mb-3">
               <label htmlFor="name"><h5>이름 수정</h5></label>
@@ -172,6 +200,83 @@ const Mypage: React.FC<Props> = ({handleChange, handleSubmit} : Props) => {
                   </div>
                 </div>
               </div>
+
+              <div className="mb-3">
+            <label htmlFor="weight"><h5>몸무게 수정</h5></label>
+              <div className="accordion" id="accordionExample3">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="headingFour">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseseven" aria-expanded="true" aria-controls="collapseseven">
+        {user.weight}
+                    </button>
+                  </h2>
+                    <div id="collapseseven" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
+                      <div className="accordion-body">
+                      <div className='row'>
+                        <div className='col-md-6 mb-6'>
+                        <h5>수정할 몸무게 입력</h5>
+                        </div>
+                        <div className='col'>
+                        <h5><input name='weight' onChange={handleChange}/></h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-3">
+            <label htmlFor="height"><h5>키 수정</h5></label>
+              <div className="accordion" id="accordionExample3">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="headingFive">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseeight" aria-expanded="true" aria-controls="collapseeight">
+        {user.height}
+                    </button>
+                  </h2>
+                    <div id="collapseeight" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
+                      <div className="accordion-body">
+                      <div className='row'>
+                        <div className='col-md-6 mb-6'>
+                        <h5>수정할 키 입력</h5>
+                        </div>
+                        <div className='col'>
+                        <h5><input name='height' onChange={handleChange}/></h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div className="mb-3">
+            <label htmlFor="gender"><h5>성별 수정</h5></label>
+              <div className="accordion" id="accordionExample3">
+                <div className="accordion-item">
+                  <h2 className="accordion-header" id="headingSix">
+                    <button className="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsenine" aria-expanded="true" aria-controls="collapsenine">
+        {user.gender}
+                    </button>
+                  </h2>
+                    <div id="collapsenine" className="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#accordionExample">
+                      <div className="accordion-body">
+                      <div className='row'>
+                        <div className='col-md-6 mb-6'>
+                        <h5>수정할 성별 입력</h5>
+                        </div>
+                        <div className='col'>
+                        <h5><input name='gender' onChange={handleChange}/></h5>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            
+            
+                 
+              
           
           <hr className="mb-4 "/>
           <div className='row'>
@@ -181,7 +286,7 @@ const Mypage: React.FC<Props> = ({handleChange, handleSubmit} : Props) => {
             </button>
            &nbsp; 
            <Link href={'/users/remove'}>
-          <button className="btn btn-danger btn-lg btn-block">
+          <button className="btn btn-danger btn-lg btn-block" onClick={handleClick}>
             <h5>Account Delete</h5>
           </button>  
           </Link>
@@ -196,15 +301,5 @@ const Mypage: React.FC<Props> = ({handleChange, handleSubmit} : Props) => {
       </div>
   )
 }
-/** 
-export const getServerSideProps = async(
-  userToken: any = localStorage.getItem('loginSuccessUser')) => {
-  const SERVER = 'http://127.0.0.1:8080'
-  console.log(typeof(userToken))
-  try{
-    const response: AxiosResponse = await axios.post(`${SERVER}/users/load`, userToken, {headers})
-    console.log(`로그인 상태 유지중 : + ${JSON.stringify(response.data)}`)
-  } catch(err){ return err; }
-}
-*/
+
 export default Mypage

@@ -8,19 +8,19 @@ import React, { useEffect, useState } from 'react'
 
 export type UserFindIdInput = {
   name: string,
-  phone : string,
+  email : string,
 }
 
 export type UserFindPwInput = {
   username: string,
-  phone : string,
+  email : string,
 }
 
 const findAccountPage: NextPage = () => {
   const [findUserName, setFindUserName] = useState<UserFindIdInput>
-  ({name: '', phone: ''});
+  ({name: '', email: ''});
   const [findPw, setFindPw] = useState<UserFindPwInput>({
-    username: '', phone: ''
+    username: '', email: ''
   })
   //const [usernameResult, setUsernameResult] = useState<Array<ResultFindUserName>>([])
   const [usernameResult, setUsernameResult] = useState<string>('')

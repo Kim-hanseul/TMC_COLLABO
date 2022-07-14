@@ -18,13 +18,13 @@ interface UserJoinType{
     type: string;
     payload: {
         username:string, password:string, email:string, 
-        name:string, phone:string, birth:string, nickname:string
+        name:string, phone:string, weight:string, height:string, nickname:string, gender:string
     }
 }
 
 export interface LoginUser{ // api data type
     username:string, password:string, email:string, name:string,
-     phone:string, birth:string, nickname:string, userId? : number,
+     phone:string, nickname:string, userId? : number, weight: string,height:string,gender:string
      token: any, roles: any   
 }
 

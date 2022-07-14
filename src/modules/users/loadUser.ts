@@ -5,7 +5,7 @@ export interface Token {
 
 export interface UserInfo {
     userId: number, username: string, password: any,
-    name: string, birth: string, nickname: string, email: string,
+    name: string, nickname: string, email: string,
     phone: string, roles: string
 }
 

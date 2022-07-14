@@ -7,8 +7,8 @@ export interface UserLoginInput {
 }
 
 export interface LoginUser{ // api data type
-    username:string, password:string, name:string,
-     phone:string, birth:string, nickname:string, userId? : number,
+    username:string, password:string, name:string, email:string,
+     phone:string,  nickname:string, userId? : number, weight: string, height:string,
      token: any, roles: any   
 }
 export type LoginState = { // state type

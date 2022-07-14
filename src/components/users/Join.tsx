@@ -7,7 +7,7 @@ import { checkIdRequest } from '@/modules/users/check'
 type Props = {
   handleChange : (e : React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLTextAreaElement>) => void;
   handleSubmit : (e : React.FormEvent<HTMLFormElement>) => void;
-  checkChange: (e : React.ChangeEvent<HTMLInputElement>) => void;
+  checkChange : (e : React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 export interface UsernameType{
@@ -125,10 +125,7 @@ console.log(`0. 회원가입 입력 : ${JSON.stringify(user)}`)
       </div>
       {check.checkPwValue === '' ? null :  
       <>{ check.checkPwValue === user.password ? <p>'일치합니다.'</p> || setPasswordSame(true) : <p className='fw-bold text-danger'> 일치하지 않아요 </p> || setPasswordSame(false)} </> }
-      <div className="form-floating">
-        <input onChange = {handleChange} type="text" className="form-control" id="birth" name = "birth" placeholder="생년월일" />
-        <label htmlFor="floatingBirth"><h5>birth</h5></label>
-      </div>
+   
       <div className="form-floating">
         <input ref = {nameRef} onChange = {handleChange} type="text" className="form-control" id="name" name = "name" placeholder="Name" />
         <label htmlFor="floatingName"><h5>Name</h5></label>
