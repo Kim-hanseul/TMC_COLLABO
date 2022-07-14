@@ -20,6 +20,7 @@ class MyDocument extends Document {
                 <link href="https://fonts.googleapis.com/css2?family=Nanum+Brush+Script&display=swap" rel="stylesheet"></link>
                 <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"></link>
                 <link href="https://www.w3schools.com/w3css/4/w3.css" rel="stylesheet"></link>
+                <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'></link>
                 <script src="https://accounts.google.com/gsi/client" async defer></script>
                 <meta
                     name="viewport"

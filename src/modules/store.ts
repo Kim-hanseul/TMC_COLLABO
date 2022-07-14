@@ -7,7 +7,6 @@ import loginReducer from './users/login';
 import findUserNameReducer from './users/findUserName'
 import findUserPwReducer from './users/findPw'
 import loadUserReducer from './users/loadUser'
-import articleReducer from './boards';
 import updateReducer from './users/update'
 import removeReducer from './users/remove'
 import checkReducer from '@/modules/users/check'
@@ -29,7 +28,6 @@ const combinedReducer = combineReducers({
         findUserName : findUserNameReducer,
         findUserPw : findUserPwReducer,
         loadUser: loadUserReducer,
-        article: articleReducer,
         update: updateReducer,
         remove: removeReducer,
         check: checkReducer

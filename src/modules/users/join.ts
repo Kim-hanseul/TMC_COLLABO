@@ -1,7 +1,8 @@
 import { createAsyncThunk, createSlice, PayloadAction} from '@reduxjs/toolkit'
 
 export interface User {
-    username:string, password:string, name:string, phone:string, birth:string, nickname:string
+    username:string, password:string, name:string, phone:string, nickname:string, weight : string, height : string,
+    gender : string, 
 }
 
 export interface UserState{

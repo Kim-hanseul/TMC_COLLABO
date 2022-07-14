@@ -1,11 +1,11 @@
-import Layout from '@components/layout';
-import Breadcrumb, { BreadcrumbItem } from '@components/other/breadcrumb';
 import React from 'react';
+import { Nav2 } from '@/components/Nav2';
 
 const About = () => {
  
   return (
-    <Layout title="About Team">
+    <>
+    <Nav2/>
       <div className="container">
         <table>
                 <tbody>
@@ -30,7 +30,7 @@ const About = () => {
                 </style>
             </table>
         </div>
-    </Layout>
+      </>
   );
 };
 

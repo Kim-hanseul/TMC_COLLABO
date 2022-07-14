@@ -11,7 +11,8 @@ export interface UsernameType{
 const Join: React.FC = () => {
 
   const [user, setUser] =useState<User>({
-    username:'', password:'', name:'', phone:'', birth:'', nickname:''
+    username:'', password:'', name:'', phone:'', nickname:'', weight : '', height : '',
+    gender : '',
 })
   const [username, setUsername] = useState<UsernameType>({username: ''})
 
@@ -70,10 +71,6 @@ const idCheck = (e : React.MouseEvent<HTMLButtonElement>) => {
         <label htmlFor="floatingPassword"><h5>Password Check</h5></label>
       </div>
       <div className="form-floating">
-        <input onChange = {handleChange} type="text" className="form-control" id="birth" name = "birth" placeholder="생년월일" />
-        <label htmlFor="floatingBirth"><h5>birth</h5></label>
-      </div>
-      <div className="form-floating">
         <input onChange = {handleChange} type="text" className="form-control" id="name" name = "name" placeholder="Name" />
         <label htmlFor="floatingName"><h5>Name</h5></label>
       </div>
@@ -89,6 +86,18 @@ const idCheck = (e : React.MouseEvent<HTMLButtonElement>) => {
         <input onChange = {handleChange} type="text" className="form-control" id="phone" name='phone' placeholder="Phone Number" />
         <label htmlFor="floatingPhone"><h5>Phone Number</h5></label>
       </div>
+      <div className="form-floating">
+        <input onChange = {handleChange} type="text" className="form-control" id="weight" name='weight' placeholder="weight" />
+        <label htmlFor="floatingPhone"><h5>weight</h5></label>
+      </div>
+      <div className="form-floating">
+        <input onChange = {handleChange} type="text" className="form-control" id="height" name='height' placeholder="height" />
+        <label htmlFor="floatingPhone"><h5>height</h5></label>
+      </div>
+      <div className="form-floating">
+        <input onChange = {handleChange} type="text" className="form-control" id="gender" name='gender' placeholder="gender" />
+        <label htmlFor="floatingPhone"><h5>gender</h5></label>
+      </div>
       
       <button className="w-100 btn btn-lg btn-outline-secondary" type='submit'>
                 <h4>Sign Up</h4>
@@ -97,8 +106,7 @@ const idCheck = (e : React.MouseEvent<HTMLButtonElement>) => {
                   <label className="custom-control-label" htmlFor="aggrement">개인정보 수집 및 이용에 동의합니다.</label>
                 </div>
         </div>  
-        
-            <p className="mt-5 mb-3 text-muted">&copy; clozet 2022</p>
+            <p className="mt-5 mb-3 text-muted">&copy; TMC 2022</p>
     </form>    
     )
 }

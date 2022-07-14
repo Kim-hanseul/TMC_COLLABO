@@ -41,6 +41,9 @@ export const userJoinApi = async (
         birth: string,
         nickname: string,
         phone: string
+        weight : string, 
+        height : string,
+        gender : string,
     }) => {
         try{
             alert(`진행4. API 시도`)   

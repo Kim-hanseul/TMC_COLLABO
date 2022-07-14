@@ -10,7 +10,6 @@ a {
   color: inherit;
   text-decoration: none;
   font-family: 'Jua', serif;
-  font-size: 25px;
 }
 
 * {
@@ -20,10 +19,9 @@ h1, h2, h3, h4, h5, h6, option, select{
   font-family: 'Jua', serif;
 }
 p {
-  font-size: 18px;
+  font-size: 16px;
   font-family: 'Jua', serif;
 }
-
 button{
   font-family: 'Jua', serif;
 }

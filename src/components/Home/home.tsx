@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import Dots from "./dots";
 import Image from 'next/image'
 import gogo from "../no-background.png"
+import gogo2 from "../kid3.png"
 
 const Main = () => {
   const outerDivRef = useRef<any>();
@@ -91,10 +92,15 @@ const Main = () => {
           <div className="kid">
           <Image className="kid" src={gogo} alt="kid"></Image>
           </div>
-        <div className="text" img src="../balloon2.png">"오늘 뭐 먹지?"<br/>고민할 것도 많은데<br/>식단까지? </div>
+        <div className="text">"오늘 뭐 먹지?"<br/>고민 할 것도 많은데<br/>식단까지? </div>
       </div>
       <div className="divider"></div>
-      <div className="inner2 bg-second">Test Page 2</div>
+      <div className="bg-second">
+        <div className="kid2">
+          <Image className="kid" src={gogo2} alt="kid"></Image>
+        </div>
+        <div className="text2">당신의 시간은 5분도 소중하니까!<br/>식단만큼은 저희에게 맡겨주세요!<br/></div>
+      </div>
       <div className="divider"></div>
       <div className="inner2 bg-third">Test Page 3</div>
            <style jsx>{`
@@ -104,7 +110,7 @@ const Main = () => {
                       }
                       .bg-first {
                         position : relative;
-                        background-color:#4ab379;
+                        background-color:#56aece;
                         height : 100vh;
                                   }
                       /* 화면에서 스크롤바 안보이게 */
@@ -112,20 +118,38 @@ const Main = () => {
                         display: none;
                       }
                       .text {
-                        font-size : 100px;
+                        font-size : 80px;
                         font-family : 'Nanum Brush Script';
                         position : absolute;
                         top: 200px;
-                        left: 500px;
+                        left: 650px;
                         color : white;
-                        background-image : url("../balloon2.png");
+              
+                      }
+                      .text2 {
+                        font-size : 80px;
+                        font-family : 'Nanum Brush Script';
+                        position : absolute;
+                        top: 200px;
+                        left: 700px;
+                        color : white;
+                
                       }
                       .kid {
+                        transform : scale(1.2);
                         position : relative;
                         object-fit: fill;
                         overflow: hidden;
-                        top: 50%;
-                        left : 50%;
+                        top: 40%;
+                        left : 60%;
+                      }
+                      .kid2 {
+                        transform : scale(1.2);
+                        position : relative;
+                        object-fit: fill;
+                        overflow: hidden;
+                        top: 40%;
+                        left : 15%;
                       }
                       .balloon2{
                         position : relative;
@@ -134,8 +158,10 @@ const Main = () => {
                         top: -200px;
                         left : 500px;
                       }
-                      .ballon2 Image{
-
+                      .bg-second{
+                        position : relative;
+                        background-color: #5de173;
+                        height : 100vh;
                       }
                       .inner2 {
                         height: 100vh;
@@ -147,9 +173,6 @@ const Main = () => {
                         font-family : 'Yeon Sung'
                       }
                       
-                      .bg-second {
-                        background-color: #b6d8f2;
-                      }
                       .bg-third {
                         background-color: #f4cfdf;
                       }

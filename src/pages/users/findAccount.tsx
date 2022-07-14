@@ -1,30 +1,36 @@
-import FindAccount from 'components/users/FindAccount'
-import FindUserName from 'components/users/FindAccount'
-import { useAppDispatch } from 'hooks'
-import { findUserPwRequest } from 'modules/users/findPw'
-import { findUserNameRequest } from 'modules/users/findUserName'
+import FindAccount from '@/components/users/FindAccount'
+import { useAppDispatch } from '@/hooks'
+import store, { AppState, useAppSelector } from '@/modules/store'
+import { findUserPwRequest } from '@/modules/users/findPw'
+import { findUserNameRequest, ResultFindUserName } from '@/modules/users/findUserName'
 import { NextPage } from 'next'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export type UserFindIdInput = {
   name: string,
-  
-  
+  phone : string,
 }
+
 export type UserFindPwInput = {
   username: string,
-  
- 
+  phone : string,
 }
 
 const findAccountPage: NextPage = () => {
   const [findUserName, setFindUserName] = useState<UserFindIdInput>
-  ({name: '', });
+  ({name: '', phone: ''});
   const [findPw, setFindPw] = useState<UserFindPwInput>({
-    username: '', 
+    username: '', phone: ''
   })
+  //const [usernameResult, setUsernameResult] = useState<Array<ResultFindUserName>>([])
+  const [usernameResult, setUsernameResult] = useState<string>('')
   const dispatch = useAppDispatch()
+  const {data} = useAppSelector((state: AppState) => state.rootReducer.findUserName)
+  const {status} = useAppSelector((state: AppState) => state.rootReducer.findUserName)
+  console.log(data, status)
+  //useEffect(()=>{setUsernameResult(data)},[data])
 
+  useEffect(()=>{setUsernameResult(JSON.stringify(data))},[data])
   const onChangeFindId = (e: React.FormEvent<HTMLInputElement>) => {
     e.preventDefault()
     const {name, value} = e.currentTarget
@@ -49,8 +55,8 @@ const findAccountPage: NextPage = () => {
     dispatch(findUserPwRequest(findPw))
   }
   return (
-    <FindAccount handleFindId={onChangeFindId} submitFindId = {onSubmitFindId}
-    handleFindPw = {onChangeFindPw} submitFindPw = {onSubmitFindPw}/>
+    <FindAccount findId = {usernameResult} handleFindId={onChangeFindId} submitFindId={onSubmitFindId}
+    handleFindPw={onChangeFindPw} submitFindPw={onSubmitFindPw}/>
   )
 }
 export default findAccountPage
