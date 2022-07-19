@@ -1,5 +1,4 @@
 import { loadUserApi } from '@/apis/userApi'
-import RemovePage from '@/pages/users/remove'
 import axios, { AxiosResponse } from 'axios'
 import Link from 'next/link'
 import React, { useEffect, useRef, useState } from 'react'
@@ -275,21 +274,18 @@ const Mypage: React.FC<Props> = ({handleChange, handleSubmit, handleClick} : Pro
               </div>
             
             
-                 
-              
-          
           <hr className="mb-4 "/>
           <div className='row'>
           <div className="col-md-6 mb-4">
-          <button className="btn btn-secondary btn-lg btn-block" type="submit">
+          <button className="btn btn-secondary btn-lg btn-block">
             <h5>Account Update</h5>
             </button>
            &nbsp; 
-           <Link href={'/users/remove'}>
+          
           <button className="btn btn-danger btn-lg btn-block" onClick={handleClick}>
             <h5>Account Delete</h5>
-          </button>  
-          </Link>
+          </button>
+
           </div>
           </div>
           </>

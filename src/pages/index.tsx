@@ -1,13 +1,12 @@
 import Main from "@/components/Home/home";
-import { Nav } from "@/components/Nav";
-import { Nav2 } from '@/components/Nav2'
+import { Nav } from '@/components/Nav'
 
 
 const Home = () => {
     return(
   <>
-  <Nav2>
-  </Nav2>
+  <Nav>
+  </Nav>
   <Main>
   </Main>
   </>

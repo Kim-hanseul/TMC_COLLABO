@@ -1,5 +1,5 @@
 import { PayloadAction } from '@reduxjs/toolkit'
-import { call, delay, put, takeLatest, takeLeading, throttle } from 'redux-saga/effects'
+import { call, delay, put, take, takeEvery, takeLatest, takeLeading, throttle } from 'redux-saga/effects'
 // yarn add @redux-saga/is --dev , yarn add @types/redux, yarn add redux-saga
 import { joinSuccess, userActions } from '@/modules/users/join';
 import { loginActions, loginFailure, loginSuccess } from '@/modules/users/login';
@@ -18,33 +18,44 @@ interface UserJoinType{
     type: string;
     payload: {
         username:string, password:string, email:string, 
-        name:string, phone:string, weight:string, height:string, nickname:string, gender:string
+        name:string, phone:string, birth:string, nickname:string, weight : string,
+        height : string,
+        gender : string
     }
 }
-
 export interface LoginUser{ // api data type
     username:string, password:string, email:string, name:string,
-     phone:string, nickname:string, userId? : number, weight: string, height:string, gender:string
+     phone:string, birth:string, nickname:string, userId? : number, weight : string,
+     height : string,gender : string,
      token: any, roles: any   
 }
-
 export interface UserLoginInput {
     username: string,
     password: string
 }
 
 //Get Saga
+function* join (user: UserJoinType ) {
+    try{
+        console.log(' 3.  saga내부 join 성공  '+ JSON.stringify(user))
+        const response: any = userJoinApi(user.payload)
+        yield put(joinSuccess(response.payload))
+        
+    }catch(error){
+        yield put(userActions.joinFailure(error))
+    }
+}
+
 function* login(action : {payload: UserLoginInput}) {
     const {loginSuccess, loginFailure} = loginActions;
     const param = action.payload // 입력된 action에 대한 payload
     try{
         alert(`3. saga내부 login 성공  + ${JSON.stringify(param)}`)
         const response: LoginUser = yield call(userLoginApi, param)
-        alert('6. api 호출 후, 성공 액션에 API Data put')
         // call은 미들웨어에게 함수와 인자들을 실행하라는 명령
         // = yield userLoginApi(login.payload)
         yield put(loginSuccess(response))
-        window.location.href = ('/');
+        //window.location.href = ('/');
     }
     catch(error){
          alert('진행 3: saga내부 join 실패  ') 
@@ -90,10 +101,10 @@ function* loadUser(action : {payload : Token}){
     }
 }
 
-function* remove(action : PayloadAction<{}>){
+function* remove(action : PayloadAction<{token : ''}>){
     const {removeSuccess, removeFailure} = removeActions
     try{
-        console.log(`삭제 saga 성공 + ${JSON.stringify(action.payload)}`)
+        console.log(`삭제 saga + ${JSON.stringify(action.payload)}`)
         yield call(removeUserApi, action.payload)
         yield put (removeSuccess())
     } catch (error) {
@@ -112,34 +123,24 @@ function* update(action: {payload: UpdateInfo}) {
     }
 }
 
-function* checkId(action : PayloadAction<{}>){
+function* checkId(action : {payload : any}){
     console.log(`check saga 실행 + ${JSON.stringify(action.payload)}`)
     try{
         yield call(checkIdApi, action.payload)
+        
     }catch (error) {
-    yield 
+        yield
     }
 }
 
 //main Saga + get Saga -> Lambda try
 export function* watchJoin(){
-    yield throttle(500, userActions.joinRequest, (user: UserJoinType ) => {
-        try{
-            alert(`3. saga내부 join 성공  + ${JSON.stringify(user)}`)
-            //console.log(' saga내부 join 성공  '+ JSON.stringify(user))
-            const response: any =  userJoinApi(user.payload)
-            put(joinSuccess(response.payload))
-            
-        }catch(error){
-             console.log(' saga내부 join 실패  ') 
-            put(userActions.joinFailure(error))
-        }
-    }
-    )
+    const {joinRequest} = userActions;
+    yield takeEvery(joinRequest, join)
 }
 export function* watchLogin(){
     const { loginRequest } = loginActions;
-    yield takeLeading(loginRequest, login)
+    yield takeEvery(loginRequest, login)
 }
 export function* watchFindUserName(){
     const { findUserNameRequest } = findUserNameActions

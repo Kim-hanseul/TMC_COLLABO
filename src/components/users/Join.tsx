@@ -23,7 +23,7 @@ const Join: React.FC = () => {
 
   // 회원가입 타입
   const [user, setUser] =useState<User>({
-    username:'', password:'', email:'', name:'', phone:'', nickname:'', weight:'', height:'',  gender : ''
+    username:'', password:'', email:'', name:'', phone:'', nickname:'', weight:'', height:'',  gender :''
 })
 const [username, setUsername] = useState<UsernameType>({username: ''}) // 아이디 중복확인
 const [check, setCheck] = useState<CompareType>({checkIdValue: '', checkPwValue: ''})
@@ -103,16 +103,6 @@ console.log(`0. 회원가입 입력 : ${JSON.stringify(user)}`)
         <label htmlFor="floatingUserName"><h5>User ID</h5></label>
         { usernameVal === true ? null : <p className='fw-bold text-secondary'>영문자로 시작하는 영문 또는 숫자의 6 ~ 20자로 만들어주세요</p>}
       </div>
-      <div className='form-floating'>
-      <input onChange={idCheckChange} name = "username" className='form-control' id = "checkId"/>
-      <label htmlFor='floatingCheckUsername'>
-        <h5>ID 중복확인</h5>
-      </label>
-      </div>
-      <button onClick={idCheck} name="checkButton" className='btn btn-primary btn-sm'>
-              <h5>ID Check</h5>
-      </button>
-        
       <div className="form-floating">
         <input ref = {passwordRef} onChange = {handleChange} type="password" className="form-control" id="password" name = "password" placeholder="Password" />
         <label htmlFor="floatingPassword"><h5>Password</h5></label>
@@ -146,15 +136,15 @@ console.log(`0. 회원가입 입력 : ${JSON.stringify(user)}`)
       </div>
       <div className="form-floating">
         <input onChange = {handleChange} type="text" className="form-control" id="weight" name='weight' placeholder="weight" />
-        <label htmlFor="floatingPhone"><h5>weight</h5></label>
+        <label htmlFor="floatingWeight"><h5>weight</h5></label>
       </div>
       <div className="form-floating">
         <input onChange = {handleChange} type="text" className="form-control" id="height" name='height' placeholder="height" />
-        <label htmlFor="floatingPhone"><h5>height</h5></label>
+        <label htmlFor="floatingHeight"><h5>height</h5></label>
       </div>
       <div className="form-floating">
         <input onChange = {handleChange} type="text" className="form-control" id="gender" name='gender' placeholder="gender" />
-        <label htmlFor="floatingPhone"><h5>성별 (남성 혹은 여성으로 작성해주세요)</h5></label>
+        <label htmlFor="floatingGender"><h5>성별 (남성 혹은 여성으로 작성해주세요)</h5></label>
       </div>
 
       {/* <div className="form-check form-check-inline">

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav2 } from '@/components/Nav2';
+import { Nav2 } from '@/components/Nav';
 
 const About = () => {
  

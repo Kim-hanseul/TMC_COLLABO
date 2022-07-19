@@ -1,75 +1,89 @@
-export function Nav () {
-  return (
-    <nav className="dropdownmenu">
-  <ul>
-    <li><a href="http://www.jochaho.com/wordpress/">Home</a></li>
-    <li><a href="http://www.jochaho.com/wordpress/about-pritesh-badge/">About Me</a></li>
-    <li><a href="#">Articles on HTML5 & CSS3</a>
-      <ul id="submenu">
-        <li><a href="http://www.jochaho.com/wordpress/difference-between-svg-vs-canvas/">Difference between SVG vs. Canvas</a></li>
-        <li><a href="http://www.jochaho.com/wordpress/new-features-in-html5/">New features in HTML5</a></li>
-        <li><a href="http://www.jochaho.com/wordpress/creating-links-to-sections-within-a-webpage/">Creating links to sections within a webpage</a></li>
-      </ul>
-    </li>
-    <li><a href="http://www.jochaho.com/wordpress/category/news/">News</a></li>
-    <li><a href="http://www.jochaho.com/wordpress/about-pritesh-badge/">Contact Us</a></li>
-  </ul>
-  <style jsx>{`
-  .dropdownmenu ul, .dropdownmenu li {
-	margin: 0;
-	padding: 0;
+import 'bootstrap/dist/css/bootstrap.css'
+import React, {useEffect, useState} from 'react'
+import JoinPage from '@/pages/users/join';
+import LoginPage from '@/pages/users/login';
+import LogoutPage from '@/pages/users/logout';
+
+export function Nav() {
+    const [item, setItem] = useState(null)
+    useEffect (()=> {
+        let item : any = localStorage.getItem('loginSuccessUser');
+        //let googleItem: any = windo.getItem()
+        setItem(item)
+    },[])
+    
+    return (
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
+    <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span className="navbar-toggler-icon"></span>
+    </button>
+    
+    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul className="navbar-nav me-auto mb-2 mb-lg-0">    
+        { item !== null ? 
+        <><li className="nav-item dropdown">
+                        </li><li className="nav-item dropdown">
+                                <a className="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    UserPage
+                                </a>
+                                <ul className="dropdown-menu" aria-labelledby="navbarDropdown">
+                                    <li><a className="dropdown-item" href="/users/mypage">My Page</a></li>
+                                    <li><a className="dropdown-item" href="/users/findAccount">Find Account</a></li>
+                                </ul>
+                            </li></> : null}
+        </ul> 
+                
+        <div>
+            {item === null ?
+
+            <div>
+            <button type ='button' className='btn btn-dark' data-bs-toggle="modal" data-bs-target="#modal1">
+            <h5>Register</h5>
+            </button>
+            <div className="modal fade" id="modal1"tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                <div className="modal-header">
+                 <h5 className="modal-title" id="exampleModalLabel">JOIN</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div className="modal-body">
+                 <JoinPage/>
+             </div>
+            </div>
+        </div>
+        </div>
+        
+        &nbsp;
+        <button  type = 'button' className='btn btn-dark' data-bs-toggle="modal" data-bs-target="#modal2">
+            <h5>Login</h5>
+            </button>
+            <div className="modal fade" id="modal2"tabIndex={-1} aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div className="modal-dialog">
+                <div className="modal-content">
+                <div className="modal-header">
+                 <h5 className="modal-title" id="exampleModalLabel2">LOGIN</h5>
+                    <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+             </div>
+             <div className="modal-body">
+                 <LoginPage/>
+             </div>
+            </div>
+        </div>
+        </div>
+        
+        &nbsp;
+        </div>:
+        <div>
+            <LogoutPage/>
+        </div>
+        }
+    </div>
+    </div>
+    </div>
+    </nav>
+    )
 }
-.dropdownmenu ul {
-	background: gray;
-	list-style: none;
-	width: 100%;
-}
-.dropdownmenu li {
-	float: left;
-	position: relative;
-	width:auto;
-}
-.dropdownmenu a {
-	background: #30A6E6;
-	color: #FFFFFF;
-	display: block;
-	font: bold 12px/20px sans-serif;
-	padding: 10px 25px;
-	text-align: center;
-	text-decoration: none;
-	-webkit-transition: all .25s ease;
-	-moz-transition: all .25s ease;
-	-ms-transition: all .25s ease;
-	-o-transition: all .25s ease;
-	transition: all .25s ease;
-}
-.dropdownmenu li:hover a {
-	background: #000000;
-}
-#submenu {
-	left: 0;
-	opacity: 0;
-	position: absolute;
-	top: 35px;
-	visibility: hidden;
-	z-index: 1;
-}
-li:hover ul#submenu {
-	opacity: 1;
-	top: 40px;	/* adjust this as per top nav padding top & bottom comes */
-	visibility: visible;
-}
-#submenu li {
-	float: none;
-	width: 100%;
-}
-#submenu a:hover {
-	background: #DF4B05;
-}
-#submenu a {
-	background-color:#000000;
-}
-  `}</style>
-</nav>
-  )
-}
+
